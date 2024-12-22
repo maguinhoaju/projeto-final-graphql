@@ -4,7 +4,6 @@ import Query from "./scr/resolvers/query.js";
 import Mutation from "./scr/resolvers/mutation.js";
 import { localizations } from "./scr/database.js";
 
-//const resolvers = { Query, Mutation };
 const resolvers = { Query, Mutation };
 const context = { localizations };
 

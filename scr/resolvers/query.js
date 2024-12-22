@@ -8,7 +8,6 @@ const Query = {
     },
     localization: (_, args, context) => {
         const id = args.id;
-        const nome = args.nome;
         const { localizations } = context;
         return localizations.filter(localization => {
             return localization.id == id;
