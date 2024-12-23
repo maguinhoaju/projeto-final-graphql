@@ -7,7 +7,17 @@ import { localizations } from "./scr/database.js";
 const resolvers = { Query, Mutation };
 const context = { localizations };
 
-const server = new ApolloServer( { typeDefs: typeDefs, resolvers, context } );
+const server = new ApolloServer( { typeDefs: typeDefs, resolvers, context,
+    plugins: [
+        {
+          requestDidStart(requestContext) {
+//            console.log('Requisição recebida:');
+//            console.log(`Query: ${requestContext.request.query}`);
+//            console.log(`Variáveis: ${JSON.stringify(requestContext.request.variables)}`);
+          }
+        }
+      ]
+ } );
 server
     .listen()
     .then((serverInfo) => {

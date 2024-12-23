@@ -10,9 +10,18 @@ const typeDefs = gql`
     type Mutation {
         addLocalization(newLocalization: addLocalizationInput): localization!
         deleteLocalization(id: String!): String
+        updateLocalization(localization: updateLocalizationInput): localization!
     }
     
     input addLocalizationInput {
+        nome: String
+        latitude: Float
+        longitude: Float
+        cor: String
+    }
+
+    input updateLocalizationInput {
+        id: String
         nome: String
         latitude: Float
         longitude: Float
